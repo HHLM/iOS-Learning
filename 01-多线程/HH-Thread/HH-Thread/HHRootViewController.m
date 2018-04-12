@@ -41,8 +41,39 @@
     [super viewDidLoad];
     _dataArray = @[@"原子属性",@"NSThread",@"GCD"];
     [self.myTableView reloadData];
+    
+    
+    
+    /**
+     RunLoop :
+        -- 保证程序不退出
+        -- 负责监听事件，监听iOS中所有的事件：
+                        触摸，时钟，网络事件
+        -- 如果没有事件发生，会让程序进入休眠状态
+     */
+    
+    //默认是时钟模式
+    //NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
+    /**
+     NSDefaultRunLoopMode -- 时钟模式，网络事件。 默认模式
+     NSRunLoopCommonModes -- 用户交互模式
+     若时钟触发方法，执行了一个非常耗时的操作，UI界面就非常卡顿，或者定时器出错，要选择用户交互模式
+     */
+    NSTimer *timer =[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
+
+int i = 0;
+- (void)upDate
+{
+    i ++;
+    NSLog(@"%d----%@",i,[NSThread currentThread]);
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 20;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _dataArray.count;

@@ -9,14 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HH-Thread/HHRootViewController.m"
-            timestampString = "545152831.826557"
+            filePath = "&#x5faa;&#x73af;&#x8bed;&#x53e5;/main.m"
+            timestampString = "545185873.374947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "-loadView"
-            landmarkType = "7">
+            landmarkName = "main"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
