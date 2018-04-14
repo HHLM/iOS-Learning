@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, weak)   UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, assign,getter=isFinish) BOOL finish;
 @end
 
 @implementation HHThreadViewController
@@ -33,7 +34,53 @@
     self.scrollView.maximumZoomScale = 2;
     NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(downLoadImage) object:nil];
     [thread start];
+    [self creatThread];
+    
 }
+
+
+// MARK: NSThread使用
+- (void)creatThread {
+    //用alloc init 适用于自定义的NSThread（子类）
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(hh_runThread) object:nil];
+    thread.name = @"HHH";
+    [thread start];
+    
+    /**
+     ⚠️为什么此刻不执行这个方法？： hh_runThread执行的太快了
+     hh_runOtherThread 是在 hh_runThread方法开辟的一个子线程 当hh_runThread方法一执行完就把线程给销毁了
+     子线程的RunLoop是默认不工作的
+     
+     
+     */
+    [self performSelector:@selector(hh_runOtherThread) onThread:thread withObject:@"MMM" waitUntilDone:NO];
+    
+    
+    
+}
+- (void)hh_runThread {
+    NSLog(@"M-----:%@",[NSThread currentThread]);
+    
+    
+    // OC中使用较多的退出循环的方式
+    while (!self.finish) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+    }
+    
+    //开启当前线程的runLoop
+    //[[NSRunLoop currentRunLoop] run];
+    
+    /**
+     若[[NSRunLoop currentRunLoop] run]开启
+     下面这个不打印 说明开辟的线程在进行死循环
+     */
+    NSLog(@"干撒子！！！");
+}
+- (void)hh_runOtherThread {
+    NSLog(@"N-----:%s%@",__FUNCTION__, [NSThread currentThread]);
+    self.finish = YES;
+}
+
 - (void)downLoadImage
 {
     NSLog(@"downLoadImage---:%@",[NSThread currentThread]);

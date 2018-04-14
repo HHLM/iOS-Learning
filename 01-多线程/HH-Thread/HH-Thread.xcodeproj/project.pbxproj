@@ -18,6 +18,7 @@
 		043A0E21207C433C0022115A /* HHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A0E20207C433C0022115A /* HHBaseViewController.m */; };
 		043A0E24207C45C10022115A /* HHAtomicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A0E23207C45C10022115A /* HHAtomicViewController.m */; };
 		043A0E4A207C6A840022115A /* HHThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A0E49207C6A840022115A /* HHThreadViewController.m */; };
+		046C35F320819A2E00906832 /* HHGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C35F220819A2E00906832 /* HHGCDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		043A0E23207C45C10022115A /* HHAtomicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAtomicViewController.m; sourceTree = "<group>"; };
 		043A0E48207C6A840022115A /* HHThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHThreadViewController.h; sourceTree = "<group>"; };
 		043A0E49207C6A840022115A /* HHThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHThreadViewController.m; sourceTree = "<group>"; };
+		046C35F120819A2E00906832 /* HHGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHGCDViewController.h; sourceTree = "<group>"; };
+		046C35F220819A2E00906832 /* HHGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHGCDViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				043A0E49207C6A840022115A /* HHThreadViewController.m */,
 				043A0E22207C45C10022115A /* HHAtomicViewController.h */,
 				043A0E23207C45C10022115A /* HHAtomicViewController.m */,
+				046C35F120819A2E00906832 /* HHGCDViewController.h */,
+				046C35F220819A2E00906832 /* HHGCDViewController.m */,
 				043A0E1B207C41300022115A /* Others */,
 			);
 			path = "HH-Thread";
@@ -289,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046C35F320819A2E00906832 /* HHGCDViewController.m in Sources */,
 				043A0E1E207C42E80022115A /* HHRootViewController.m in Sources */,
 				043A0DF9207C410E0022115A /* main.m in Sources */,
 				043A0DEB207C410D0022115A /* AppDelegate.m in Sources */,

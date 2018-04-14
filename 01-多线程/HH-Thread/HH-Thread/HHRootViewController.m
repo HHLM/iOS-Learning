@@ -8,10 +8,13 @@
 
 #import "HHRootViewController.h"
 #import "HHThreadViewController.h"
+#import "HHGCDViewController.h"
+#import "HHAtomicViewController.h"
 @interface HHRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, weak) UIView *showView;
 @property (nonatomic, strong) NSArray *dataArray;
+
 @end
 
 @implementation HHRootViewController
@@ -59,10 +62,29 @@
      NSRunLoopCommonModes -- 用户交互模式
      若时钟触发方法，执行了一个非常耗时的操作，UI界面就非常卡顿，或者定时器出错，要选择用户交互模式
      */
-    NSTimer *timer =[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+//    NSTimer *timer =[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    testApp();
 }
 
+
+
+// MARK: OC的数组 通过C的方式改变长度
+void testApp (){
+    NSArray *array = @[@"0",@"1",@"2",@"3",@"4"];
+    
+    void *adds = (__bridge void*)array;
+    
+    NSLog(@"%p",adds);
+    
+    //⚠️ (NSUInteger*)adds + 1 这里面应该是存放着数组的长度 ？？？？ ⚠️
+    *((NSUInteger*)adds + 1) = 2;
+    
+    NSLog(@"%p",adds + 1);
+    
+    
+    NSLog(@"%@---%zd",array,array.count);
+}
 
 int i = 0;
 - (void)upDate
