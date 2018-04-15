@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HHAtomicViewController : UIViewController
+#import "HHBaseViewController.h"
+@interface HHAtomicViewController : HHBaseViewController
 
 @end

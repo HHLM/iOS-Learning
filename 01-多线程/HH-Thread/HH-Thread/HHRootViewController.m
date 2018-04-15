@@ -10,6 +10,7 @@
 #import "HHThreadViewController.h"
 #import "HHGCDViewController.h"
 #import "HHAtomicViewController.h"
+#import "HHRunLoopViewController.h"
 @interface HHRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, weak) UIView *showView;
@@ -42,28 +43,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@"原子属性",@"NSThread",@"GCD"];
+    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop"];
     [self.myTableView reloadData];
-    
-    
-    
-    /**
-     RunLoop :
-        -- 保证程序不退出
-        -- 负责监听事件，监听iOS中所有的事件：
-                        触摸，时钟，网络事件
-        -- 如果没有事件发生，会让程序进入休眠状态
-     */
-    
-    //默认是时钟模式
-    //NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
-    /**
-     NSDefaultRunLoopMode -- 时钟模式，网络事件。 默认模式
-     NSRunLoopCommonModes -- 用户交互模式
-     若时钟触发方法，执行了一个非常耗时的操作，UI界面就非常卡顿，或者定时器出错，要选择用户交互模式
-     */
-//    NSTimer *timer =[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(upDate) userInfo:nil repeats:YES];
-//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+
     testApp();
 }
 
@@ -86,15 +68,9 @@ void testApp (){
     NSLog(@"%@---%zd",array,array.count);
 }
 
-int i = 0;
-- (void)upDate
-{
-    i ++;
-    NSLog(@"%d----%@",i,[NSThread currentThread]);
-}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 20;
+    return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -117,19 +93,21 @@ int i = 0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HHBaseViewController *vc = [[HHBaseViewController alloc] init];
+    NSString *className = [NSString stringWithFormat:@"HH%@ViewController",_dataArray[indexPath.row]];
+    Class class = NSClassFromString(className);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 1) {
-        vc = [[HHThreadViewController alloc] init];
-    }
+    vc = [[class alloc] init];
+    vc.title = _dataArray[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -- UI
 - (UITableView *)creatTableView
 {
-    UITableView *table = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UITableView *table = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     table.delegate = self;
     table.dataSource = self;
+    table.backgroundColor = [UIColor lightGrayColor];
     [table setTableFooterView:[[UIView alloc] init]];
     return table;
 }

@@ -100,8 +100,8 @@
 			children = (
 				04CCA393207E4D1600D40671 /* C&&CPP */,
 				04CCA3A0207E4E6E00D40671 /* 循环语句 */,
-				04CCA3AB207E4E8E00D40671 /* C# */,
-				04CCA3B6207E4EA100D40671 /* Array */,
+				04CCA3AB207E4E8E00D40671 /* Const常量 */,
+				04CCA3B6207E4EA100D40671 /* 数组和指针 */,
 				04CCA392207E4D1600D40671 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,20 +133,20 @@
 			path = "循环语句";
 			sourceTree = "<group>";
 		};
-		04CCA3AB207E4E8E00D40671 /* C# */ = {
+		04CCA3AB207E4E8E00D40671 /* Const常量 */ = {
 			isa = PBXGroup;
 			children = (
 				04CCA3AC207E4E8E00D40671 /* main.m */,
 			);
-			path = "C#";
+			path = "Const常量";
 			sourceTree = "<group>";
 		};
-		04CCA3B6207E4EA100D40671 /* Array */ = {
+		04CCA3B6207E4EA100D40671 /* 数组和指针 */ = {
 			isa = PBXGroup;
 			children = (
 				04CCA3B7207E4EA100D40671 /* main.m */,
 			);
-			path = Array;
+			path = "数组和指针";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
