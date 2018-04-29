@@ -9,5 +9,5 @@
 #import "HHBaseViewController.h"
 
 @interface HHRunLoopViewController : HHBaseViewController
-
+@property (nonatomic, copy) NSString *name;
 @end
