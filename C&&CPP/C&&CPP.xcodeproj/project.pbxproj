@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045929DF2090142900D8C2CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045929DE2090142900D8C2CD /* main.m */; };
 		04CCA395207E4D1600D40671 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CCA394207E4D1600D40671 /* main.m */; };
 		04CCA3A2207E4E6E00D40671 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CCA3A1207E4E6E00D40671 /* main.m */; };
 		04CCA3AD207E4E8E00D40671 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CCA3AC207E4E8E00D40671 /* main.m */; };
@@ -14,6 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		045929DA2090142900D8C2CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		04CCA38F207E4D1600D40671 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		045929DC2090142900D8C2CD /* 超大数计算 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "超大数计算"; sourceTree = BUILT_PRODUCTS_DIR; };
+		045929DE2090142900D8C2CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04CCA391207E4D1600D40671 /* C&&CPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C&&CPP"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CCA394207E4D1600D40671 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04CCA39F207E4E6E00D40671 /* 循环语句 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "循环语句"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +76,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		045929D92090142900D8C2CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04CCA38E207E4D1600D40671 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045929DD2090142900D8C2CD /* 超大数计算 */ = {
+			isa = PBXGroup;
+			children = (
+				045929DE2090142900D8C2CD /* main.m */,
+			);
+			path = "超大数计算";
+			sourceTree = "<group>";
+		};
 		04CCA388207E4D1600D40671 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +129,7 @@
 				04CCA3A0207E4E6E00D40671 /* 循环语句 */,
 				04CCA3AB207E4E8E00D40671 /* Const常量 */,
 				04CCA3B6207E4EA100D40671 /* 数组和指针 */,
+				045929DD2090142900D8C2CD /* 超大数计算 */,
 				04CCA392207E4D1600D40671 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +141,7 @@
 				04CCA39F207E4E6E00D40671 /* 循环语句 */,
 				04CCA3AA207E4E8E00D40671 /* C# */,
 				04CCA3B5207E4EA100D40671 /* Array */,
+				045929DC2090142900D8C2CD /* 超大数计算 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +181,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		045929DB2090142900D8C2CD /* 超大数计算 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045929E22090142900D8C2CD /* Build configuration list for PBXNativeTarget "超大数计算" */;
+			buildPhases = (
+				045929D82090142900D8C2CD /* Sources */,
+				045929D92090142900D8C2CD /* Frameworks */,
+				045929DA2090142900D8C2CD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "超大数计算";
+			productName = "超大数计算";
+			productReference = 045929DC2090142900D8C2CD /* 超大数计算 */;
+			productType = "com.apple.product-type.tool";
+		};
 		04CCA390207E4D1600D40671 /* C&&CPP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04CCA398207E4D1600D40671 /* Build configuration list for PBXNativeTarget "C&&CPP" */;
@@ -229,6 +275,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
+					045929DB2090142900D8C2CD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					04CCA390207E4D1600D40671 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -263,11 +313,20 @@
 				04CCA39E207E4E6E00D40671 /* 循环语句 */,
 				04CCA3A9207E4E8E00D40671 /* C# */,
 				04CCA3B4207E4EA100D40671 /* Array */,
+				045929DB2090142900D8C2CD /* 超大数计算 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		045929D82090142900D8C2CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045929DF2090142900D8C2CD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04CCA38D207E4D1600D40671 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +362,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		045929E02090142900D8C2CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EYLTQR6ADL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		045929E12090142900D8C2CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EYLTQR6ADL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		04CCA396207E4D1600D40671 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,6 +552,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		045929E22090142900D8C2CD /* Build configuration list for PBXNativeTarget "超大数计算" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045929E02090142900D8C2CD /* Debug */,
+				045929E12090142900D8C2CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04CCA38C207E4D1600D40671 /* Build configuration list for PBXProject "C&&CPP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
