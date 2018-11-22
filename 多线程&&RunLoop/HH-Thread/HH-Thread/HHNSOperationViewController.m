@@ -8,6 +8,10 @@
 
 #import "HHNSOperationViewController.h"
 
+#define TICK   NSDate *startTime = [NSDate date]
+
+#define TOCK   NSLog(@"Time: %f", -[[NSDate date] timeIntervalSinceNow])
+
 @interface HHNSOperationViewController ()
 
 @end
@@ -22,27 +26,28 @@
     [self test];
 }
 - (void)test {
-    // 1.任务一：获取用户信息
+    
     NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"任务一");
-        
     }];
-    
-    // 2.任务二：请求相关数据
     NSBlockOperation *operation2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSDate *startTime = [NSDate date];
         sleep(1);
         NSLog(@"任务二");
+        NSDate *startTime1 = [NSDate date];
+        NSLog(@"%f",startTime1.timeIntervalSince1970 - startTime.timeIntervalSince1970);
     }];
-    
-    // 2.任务二：请求相关数据
     NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
-        sleep(2);
+        NSDate *startTime = [NSDate date];
+        sleep(1);
         NSLog(@"任务三");
+        NSDate *startTime1 = [NSDate date];
+        NSLog(@"%f",startTime1.timeIntervalSince1970 - startTime.timeIntervalSince1970);
     }];
     
     // 3.设置依赖
-    [operation1 addDependency:operation2];// 任务二依赖任务一
-    [operation1 addDependency:operation3];// 任务三依赖任务一
+    [operation1 addDependency:operation2];// 任务一依赖任务二
+    [operation1 addDependency:operation3];// 任务一依赖任务三
     
     // 4.创建队列并加入任务
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
