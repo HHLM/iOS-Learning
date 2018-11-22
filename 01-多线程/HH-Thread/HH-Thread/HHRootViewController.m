@@ -11,6 +11,7 @@
 #import "HHGCDViewController.h"
 #import "HHAtomicViewController.h"
 #import "HHRunLoopViewController.h"
+#import "HHNSOperationViewController.h"
 @interface HHRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, weak) UIView *showView;
@@ -43,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop"];
+    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop",@"NSOperation"];
     [self.myTableView reloadData];
 
     testApp();

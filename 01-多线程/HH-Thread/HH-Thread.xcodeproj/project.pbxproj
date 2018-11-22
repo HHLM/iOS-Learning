@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040CD6BE208308C2005F80BC /* HHRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CD6BD208308C2005F80BC /* HHRunLoopViewController.m */; };
+		0419A2E221A64F2E00AE775B /* HHNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419A2E121A64F2E00AE775B /* HHNSOperationViewController.m */; };
 		043A0DEB207C410D0022115A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A0DEA207C410D0022115A /* AppDelegate.m */; };
 		043A0DF1207C410D0022115A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043A0DEF207C410D0022115A /* Main.storyboard */; };
 		043A0DF3207C410D0022115A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043A0DF2207C410D0022115A /* Assets.xcassets */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		040CD6BC208308C2005F80BC /* HHRunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRunLoopViewController.h; sourceTree = "<group>"; };
 		040CD6BD208308C2005F80BC /* HHRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHRunLoopViewController.m; sourceTree = "<group>"; };
+		0419A2E021A64F2E00AE775B /* HHNSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHNSOperationViewController.h; sourceTree = "<group>"; };
+		0419A2E121A64F2E00AE775B /* HHNSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHNSOperationViewController.m; sourceTree = "<group>"; };
 		043A0DE6207C410D0022115A /* HH-Thread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HH-Thread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		043A0DE9207C410D0022115A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		043A0DEA207C410D0022115A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				046C35F220819A2E00906832 /* HHGCDViewController.m */,
 				040CD6BC208308C2005F80BC /* HHRunLoopViewController.h */,
 				040CD6BD208308C2005F80BC /* HHRunLoopViewController.m */,
+				0419A2E021A64F2E00AE775B /* HHNSOperationViewController.h */,
+				0419A2E121A64F2E00AE775B /* HHNSOperationViewController.m */,
 				043A0E1B207C41300022115A /* Others */,
 			);
 			path = "HH-Thread";
@@ -307,6 +312,7 @@
 				043A0E21207C433C0022115A /* HHBaseViewController.m in Sources */,
 				043A0E4A207C6A840022115A /* HHThreadViewController.m in Sources */,
 				043A0E24207C45C10022115A /* HHAtomicViewController.m in Sources */,
+				0419A2E221A64F2E00AE775B /* HHNSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
