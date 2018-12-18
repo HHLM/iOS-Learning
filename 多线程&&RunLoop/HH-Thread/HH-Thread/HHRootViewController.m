@@ -12,13 +12,15 @@
 #import "HHAtomicViewController.h"
 #import "HHRunLoopViewController.h"
 #import "HHNSOperationViewController.h"
+#import "HH1.h"
+#import "HH2.h"
 @interface HHRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, weak) UIView *showView;
 @property (nonatomic, strong) NSArray *dataArray;
 
 @end
-
+extern void instrumentObjcMessageSends(BOOL);
 @implementation HHRootViewController
 
 /**
@@ -32,6 +34,10 @@
     UIView *view = [[UIView alloc] init];
     [self.view addSubview:view];
     self.showView = view;
+    instrumentObjcMessageSends(YES);
+    [[HH2 new] hh_log];
+//    instrumentObjcMessageSends(NO);
+//    [[HH1 alloc] init];
 }
 /**
  showView 使用weak不会报错的原因是：view添加到了self.view上
@@ -44,10 +50,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop",@"NSOperation"];
-    [self.myTableView reloadData];
-
-    testApp();
+    
+    NSString *str = @"124";
+    NSString *str1 = [[NSString alloc] init];
+    NSLog(@"str : %p  --- str1 : %p",str,str1);
+    NSLog(@"str : %p  --- str1 : %p",&str,&str1);
+//    return;
+//
+//    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop",@"NSOperation"];
+//    [self.myTableView reloadData];
+//
+//    testApp();
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0427CD2921BE6A18000944E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427CD2821BE6A18000944E8 /* main.m */; };
 		045929DF2090142900D8C2CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045929DE2090142900D8C2CD /* main.m */; };
 		0468FA722096000D00C959E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FA712096000D00C959E9 /* main.m */; };
 		04B4139B20C5791300782966 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4139A20C5791300782966 /* main.swift */; };
@@ -17,6 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0427CD2421BE6A17000944E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		045929DA2090142900D8C2CD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0427CD2621BE6A17000944E8 /* 算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "算法"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0427CD2821BE6A18000944E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		045929DC2090142900D8C2CD /* 超大数计算 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "超大数计算"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045929DE2090142900D8C2CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0468FA6F2096000D00C959E9 /* 指针宽度 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "指针宽度"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0427CD2321BE6A17000944E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		045929D92090142900D8C2CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +171,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0427CD2721BE6A18000944E8 /* 算法 */ = {
+			isa = PBXGroup;
+			children = (
+				0427CD2821BE6A18000944E8 /* main.m */,
+			);
+			path = "算法";
+			sourceTree = "<group>";
+		};
 		045929DD2090142900D8C2CD /* 超大数计算 */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +213,7 @@
 				045929DD2090142900D8C2CD /* 超大数计算 */,
 				0468FA702096000D00C959E9 /* 指针宽度 */,
 				04B4139920C5791300782966 /* 递归 */,
+				0427CD2721BE6A18000944E8 /* 算法 */,
 				04CCA392207E4D1600D40671 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +228,7 @@
 				045929DC2090142900D8C2CD /* 超大数计算 */,
 				0468FA6F2096000D00C959E9 /* 指针宽度 */,
 				04B4139820C5791300782966 /* 递归 */,
+				0427CD2621BE6A17000944E8 /* 算法 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +268,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0427CD2521BE6A17000944E8 /* 算法 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0427CD2A21BE6A18000944E8 /* Build configuration list for PBXNativeTarget "算法" */;
+			buildPhases = (
+				0427CD2221BE6A17000944E8 /* Sources */,
+				0427CD2321BE6A17000944E8 /* Frameworks */,
+				0427CD2421BE6A17000944E8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "算法";
+			productName = "算法";
+			productReference = 0427CD2621BE6A17000944E8 /* 算法 */;
+			productType = "com.apple.product-type.tool";
+		};
 		045929DB2090142900D8C2CD /* 超大数计算 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 045929E22090142900D8C2CD /* Build configuration list for PBXNativeTarget "超大数计算" */;
@@ -368,6 +414,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
+					0427CD2521BE6A17000944E8 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
 					045929DB2090142900D8C2CD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -417,11 +467,20 @@
 				045929DB2090142900D8C2CD /* 超大数计算 */,
 				0468FA6E2096000D00C959E9 /* 指针宽度 */,
 				04B4139720C5791300782966 /* 递归 */,
+				0427CD2521BE6A17000944E8 /* 算法 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0427CD2221BE6A17000944E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0427CD2921BE6A18000944E8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		045929D82090142900D8C2CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,12 +540,39 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0427CD2B21BE6A18000944E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0427CD2C21BE6A18000944E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		045929E02090142900D8C2CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EYLTQR6ADL;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -496,7 +582,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EYLTQR6ADL;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -509,7 +595,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM2MZ34492;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -522,7 +608,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM2MZ34492;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -535,7 +621,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM2MZ34492;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -551,7 +637,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM2MZ34492;
+				DEVELOPMENT_TEAM = 7C65JVG64D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -728,6 +814,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0427CD2A21BE6A18000944E8 /* Build configuration list for PBXNativeTarget "算法" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0427CD2B21BE6A18000944E8 /* Debug */,
+				0427CD2C21BE6A18000944E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		045929E22090142900D8C2CD /* Build configuration list for PBXNativeTarget "超大数计算" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

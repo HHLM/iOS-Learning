@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSArray *array = @[@"1",@"2",@"3"];
+    NSMutableArray *array1 = [@[@"1",@"2",@"3",@"4"] mutableCopy];
+    [array1 removeObjectsInArray:array];
+    NSLog(@"%@",array1);
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -101,6 +106,7 @@
         });
         dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
         dispatch_semaphore_signal(semap);
+        
     }
 }
 /**
