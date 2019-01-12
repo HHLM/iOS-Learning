@@ -26,7 +26,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self hh_gcdGroup];
-    [self hh_gcdSingle1];
+//    [self hh_gcdSingle1];
+//    [self hh_gcdGroup];
+    [self groupHttp];
 }
 
 /**
@@ -49,12 +51,12 @@
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
 
-    dispatch_async(quene, ^{
-        for (int i = 100; i < 110; i++) {
-            NSLog(@"i = %d", i);
-        }
-        dispatch_semaphore_signal(semaphore);
-    });
+//    dispatch_async(quene, ^{
+//        for (int i = 100; i < 110; i++) {
+//            NSLog(@"i = %d", i);
+//        }
+//        dispatch_semaphore_signal(semaphore);
+//    });
     NSLog(@"😑");
 
     return;
@@ -143,4 +145,27 @@
 //    });
 }
 
+/** 循环创建多个数据请求 异步队列*/
+- (void)groupHttp {
+    dispatch_group_t group = dispatch_group_create();
+    for (int i = 0; i < 10; i ++) {
+        dispatch_group_enter(group);
+        dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+    
+            NSLog(@"分组线程--%d----：%@",i,[NSThread currentThread]);
+            dispatch_group_leave(group);
+        });
+        if (9 == i) {
+            sleep(2);
+            dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+                NSLog(@"当前线程------：%@",[NSThread currentThread]);
+            });
+        }
+        
+    }
+}
+/** GCD 信号量*/
+- (void)gcd_single_http {
+    
+}
 @end

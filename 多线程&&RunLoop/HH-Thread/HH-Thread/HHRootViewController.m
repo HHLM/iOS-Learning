@@ -57,8 +57,8 @@ extern void instrumentObjcMessageSends(BOOL);
     NSLog(@"str : %p  --- str1 : %p",&str,&str1);
 //    return;
 //
-//    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop",@"NSOperation"];
-//    [self.myTableView reloadData];
+    _dataArray = @[@"Atomic",@"Thread",@"GCD",@"RunLoop",@"NSOperation"];
+    [self.myTableView reloadData];
 //
 //    testApp();
 }
