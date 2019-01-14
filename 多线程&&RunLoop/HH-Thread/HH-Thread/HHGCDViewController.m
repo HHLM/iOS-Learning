@@ -26,7 +26,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self hh_gcd_group];
-    [self hh_gcdSingle1];
+    [self hh_gcd_single];
 //    [self gcd_group_http];
 //    [self gcd_group_bx];
 //    [self gcd_group_notify];
@@ -377,21 +377,28 @@
  waite 等待时间
  signal 发送信号  小max 执行当前线程 == max 等待  >max 执行下面的后面的
  */
-- (void)hh_gcdSingle1 {
-    
+- (void)hh_gcd_single {
+    /** 创建一个限号量*/
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    /** 开辟一个线程*/
     dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 4; i++) {
+        //NSLog(@"1--%@",[NSThread currentThread]);
         dispatch_async(quene, ^{
             NSLog(@"tasl--%d",i);
             for (int j = 0; j < 100; j++) {
-                NSLog(@"i = %d", j);
+//                NSLog(@"i = %d", j);
             }
             [NSThread sleepForTimeInterval:1];
+           // NSLog(@"2--%@",[NSThread currentThread]);
+            /** 信号通知，让信号量 +1*/
             dispatch_semaphore_signal(semaphore);
         });
+       // NSLog(@"3--%@",[NSThread currentThread]);
+        /** 等待，直到信号量大于0时候，可以操作，同时将信号量-1*/
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
+    NSLog(@"4--%@",[NSThread currentThread]);
     NSLog(@"😑");
     return;
     
