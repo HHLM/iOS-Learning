@@ -26,7 +26,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self hh_gcd_group];
-    [self hh_gcd_single];
+//    [self hh_gcd_single];
+    [self hh_gcdSingle];
 //    [self gcd_group_http];
 //    [self gcd_group_bx];
 //    [self gcd_group_notify];
@@ -427,17 +428,24 @@
 }
 /** 创建信号量 开辟最大线程 */
 - (void)hh_gcdSingle {
+    /**
+        dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
+        放在前面 少执行一次
+        放在后面 多执行一次
+     */
     dispatch_group_t group = dispatch_group_create();
     dispatch_semaphore_t semap = dispatch_semaphore_create(5);
     for (int i = 0; i < 100; i ++) {
         dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
         dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
-            sleep(2);
-            NSLog(@"-------");
+            NSLog(@"-------%d",i);
+            [NSThread sleepForTimeInterval:2];
             dispatch_semaphore_signal(semap);
         });
-        dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
-        dispatch_semaphore_signal(semap);
+        
+//        dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
+//        NSLog(@"-----分割线 --\n");
+//        dispatch_semaphore_signal(semap);
         
     }
 }
