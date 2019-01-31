@@ -26,8 +26,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self hh_gcd_group];
-//    [self hh_gcd_single];
-    [self hh_gcdSingle];
+    [self hh_gcd_single];
+//    [self hh_gcdSingle];
 //    [self gcd_group_http];
 //    [self gcd_group_bx];
 //    [self gcd_group_notify];
@@ -381,7 +381,7 @@
 - (void)hh_gcd_single {
     /** 创建一个限号量*/
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    /** 开辟一个线程*/
+    /** 开辟一个线程 并发线程*/
     dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (int i = 0; i < 4; i++) {
         //NSLog(@"1--%@",[NSThread currentThread]);
